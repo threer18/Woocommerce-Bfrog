@@ -13,6 +13,22 @@ global $post;
 
 if ( ! $post->post_excerpt ) return;
 ?>
+<div id="area_description">
+	<?php
+	$thecolor = get_the_term_list( $post->ID, 'the_color', '', ', ', '' );
+	$thesize = get_the_term_list( $post->ID, 'the_size', '', ', ', '' );
+	?>
+	<p class="inf_thecolor"><span>Color:</span>
+	<?php
+		if (!empty($thecolor)) echo strip_tags($thecolor);
+	    ?>
+	</p>
+	<p class="inf_thesize"><span>Size:</span>
+	<?php
+		if (!empty($thesize)) echo strip_tags($thesize);
+	    ?>
+	    </p>
+</div>
 <div id="area_size">
 	<div id="product_size">
 		<?php
